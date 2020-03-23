@@ -27,11 +27,13 @@ public class DeveloperApplication implements CommandLineRunner {
 		Skill ruby = new Skill("ruby", "Ruby language skill");
 		Skill emberjs = new Skill("emberjs", "Emberjs framework");
 		Skill angularjs = new Skill("angularjs", "Angularjs framework");
+		Skill java = new Skill("java", "Spring framework");
 
 		skillRepository.save(javascript);
 		skillRepository.save(ruby);
 		skillRepository.save(emberjs);
 		skillRepository.save(angularjs);
+		skillRepository.save(java);
 
 		List<Developer> developers = new LinkedList<Developer>();
 		developers.add(new Developer("John", "Smith", "john.smith@example.com",
@@ -44,6 +46,8 @@ public class DeveloperApplication implements CommandLineRunner {
 				Arrays.asList(new Skill[] { emberjs, angularjs, javascript })));
 		developers.add(new Developer("Bob", "Brown", "brown@example.com",
 				Arrays.asList(new Skill[] { emberjs })));
+		developers.add(new Developer("Tanvir", "Hossain", "tanvir@example.com",
+				Arrays.asList(new Skill[] { java })));
 		developerRepository.saveAll(developers);
 	}
 }
